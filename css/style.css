@@ -670,54 +670,60 @@ header .icons #menu-bars{
 
 }
 
-@media (max-width:768px){
+/* Ajustes generales de los íconos dentro del header */
+header .icons {
+    display: flex; /* Asegura que los íconos estén alineados horizontalmente */
+    align-items: center;
+    position: relative; /* Ajusta la posición de los íconos */
+}
 
-    header .icons #menu-bars{
-        display: inline-block;
+/* Mostrar el menú 'burger' en dispositivos móviles */
+@media (max-width: 768px) {
+    header .icons #menu-bars {
+        display: inline-block; /* Asegura que el ícono 'burger' sea visible */
+        margin-left: auto; /* Empuja el menú burger al lado derecho */
     }
-    
-    .icons {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        z-index: 1001;
-    }
 
-
-    header .navbar{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+    header .navbar {
         position: absolute;
-        top:100%; left:0; right:0;
-        background:#fff;
-        border-top: .1rem solid rgba(0,0,0,.2);
-        border-bottom: .1rem solid rgba(0,0,0,.2);
-        padding:1rem;
+        top: 100%; 
+        left: 0; 
+        right: 0;
+        background: #fff;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        border-bottom: .1rem solid rgba(0, 0, 0, .2);
+        padding: 1rem;
+        display: none; /* Oculta el navbar por defecto */
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
 
-    header .navbar.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    header .navbar.active {
+        display: block; /* Muestra el navbar cuando está activo */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
-    header .navbar a{
-        display: block;
-        padding:1.5rem;
-        margin:1rem;
-        font-size: 2rem;
-        background:#eee;
+    header .icons a, 
+    header .icons i {
+        margin: 0 .5rem; /* Ajusta el espaciado entre los íconos */
+        display: inline-block; /* Asegura que los íconos se mantengan en línea */
     }
+}
 
-    #search-form #search-box{
-        width:90%;
-        margin:0 1rem;
+/* Ajuste para los íconos de 'servicio a domicilio', 'paga fácil', etc. */
+.about .icons-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    margin-top: .5rem;
+    justify-content: center; /* Alinea los íconos al centro */
+}
+
+@media (max-width: 768px) {
+    .about .icons-container .icons {
+        flex: 1 1 45%; /* Ajusta el tamaño de los íconos en pantallas más pequeñas */
+        margin-bottom: 1rem;
     }
-
-    .home .home-slider .slide .content h3{
-        font-size: 5rem;
-    }
-
 }
 
 @media (max-width:450px){
