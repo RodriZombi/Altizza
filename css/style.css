@@ -689,7 +689,7 @@ header .icons {
         top: 100%; 
         left: 0; 
         right: 0;
-        background: rgb(0, 0, 0);
+        background-color: black;
         border-top: .1rem solid rgba(0, 0, 0, .2);
         border-bottom: .1rem solid rgba(0, 0, 0, .2);
         padding: 1rem;
@@ -700,6 +700,7 @@ header .icons {
     header .navbar.active {
         display: block; /* Muestra el navbar cuando está activo */
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        background-color: black;
     }
 
     header .icons a, 
